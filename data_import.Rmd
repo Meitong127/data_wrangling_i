@@ -1,6 +1,6 @@
 ---
-title: "Simple document"
-output: html_document
+title: "Data import"
+output: github_document
 ---
 
 I'm an R Markdown document! 
@@ -10,10 +10,22 @@ I'm an R Markdown document!
 Here's a **code chunk** that samples from 
 a _normal distribution_:
 
+```{r setup, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+this document will show how to import data
+
+
+
+
 ```{r}
 samp = rnorm(100)
 length(samp)
 ```
+
+
+
 
 # Section 2
 
