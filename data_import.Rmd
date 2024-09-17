@@ -12,11 +12,75 @@ a _normal distribution_:
 
 ```{r setup, echo=FALSE, message=FALSE}
 library(tidyverse)
+library(janitor)
+library(readxl)
 ```
 
 this document will show how to import data
 
+import the dataset and clean the names
+```{r}
+litters_df=read_csv("data_import_examples/FAS_litters.csv")
 
+litters_df= janitor::clean_names(litters_df)
+```
+```{r}
+pups_df = read_csv(file = "data_import_examples/FAS_pups.csv ")
+
+pups_df=janitor::clean_names(pups_df)
+
+pups_df
+```
+## Look at read_csv options
+```{r}
+litters_df=
+  read_csv(
+      file="data_import_examples/FAS_litters.csv",
+      skip=1. 
+    )
+```
+
+
+```{r}
+litters_df=
+  read_csv(
+      file="data_import_examples/FAS_litters.csv",
+      na=c("NA",".","")
+    )
+litters_df=janitor::clean_names(litters_df)
+pull(litters_df,gd0_weight)
+```
+
+```{r}
+litters_df=
+  read_csv(
+      file="data_import_examples/FAS_litters.csv",
+      na=c("NA",".",""),
+      col_types=cols(
+        Group=col_factor()
+      )
+    )
+```
+
+
+
+
+##IMport the excel files
+Import the mlb dataset
+```{r}
+mlb_df= read_excel("data_import_examples/mlb11.xlsx",sheet="mlb11")
+mlb_df
+```
+
+## Look at the dataset
+```{r}
+head(litters_df)
+tail(litters_df,10)
+```
+
+```{r}
+
+```
 
 
 ```{r}
